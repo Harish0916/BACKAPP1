@@ -47,7 +47,7 @@ export const updateUser = async (req, res)=> {
             return res.status(404).json({message: "User not exist for update"});
         }
         const updatedData = await User.findByIdAndUpdate(id, req.body, {new: true});
-        res.status(200).json(updatedData);
+        res.status(200).json({message: "User updated successfully.."});
     } catch (error) {
         res.status(500).json({error: error})
     }
